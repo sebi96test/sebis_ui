@@ -1,6 +1,6 @@
 -- // GUI TO LUA \\ --
 
--- // INSTANCES: 28 | SCRIPTS: 6 | MODULES: 0 \\ --
+-- // INSTANCES: 19 | SCRIPTS: 5 | MODULES: 0 \\ --
 
 local UI = {}
 
@@ -31,7 +31,7 @@ UI["4"]["FontFace"] = Font.new([[rbxasset://fonts/families/FredokaOne.json]], En
 UI["4"]["TextColor3"] = Color3.fromRGB(0, 0, 0)
 UI["4"]["Size"] = UDim2.new(0, 460, 0, 50)
 UI["4"]["BorderColor3"] = Color3.fromRGB(0, 0, 0)
-UI["4"]["Text"] = [[Sebi's UI v1.1 Beta]]
+UI["4"]["Text"] = [[Sebi's UI v1.1.2 OP]]
 
 -- // StarterGui.ScreenGui.Frame.TextLabel.UICorner \\ --
 UI["5"] = Instance.new("UICorner", UI["4"])
@@ -106,90 +106,28 @@ UI["f"]["TextSize"] = 30
 UI["f"]["TextColor3"] = Color3.fromRGB(0, 0, 0)
 UI["f"]["BackgroundColor3"] = Color3.fromRGB(255, 0, 5)
 UI["f"]["FontFace"] = Font.new([[rbxasset://fonts/families/FredokaOne.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal)
-UI["f"]["Size"] = UDim2.new(0, 195, 0, 42)
+UI["f"]["Size"] = UDim2.new(0, 397, 0, 42)
 UI["f"]["BorderColor3"] = Color3.fromRGB(0, 0, 0)
-UI["f"]["Text"] = [[Sword]]
+UI["f"]["Text"] = [[Noclip Tool (Fly)]]
 UI["f"]["Position"] = UDim2.new(0.06522, 0, 0.30366, 0)
 
 -- // StarterGui.ScreenGui.Frame.TextButton.UICorner \\ --
 UI["10"] = Instance.new("UICorner", UI["f"])
 UI["10"]["CornerRadius"] = UDim.new(0, 40)
 
--- // StarterGui.ScreenGui.Frame.TextButton.ClassicSword \\ --
-UI["11"] = Instance.new("Tool", UI["f"])
--- [ERROR] cannot convert Grip
--- [ERROR] cannot convert WorldPivot
-UI["11"]["TextureId"] = [[rbxasset://Textures/Sword128.png]]
-UI["11"]["Name"] = [[ClassicSword]]
-
--- // StarterGui.ScreenGui.Frame.TextButton.ClassicSword.Handle \\ --
-UI["12"] = Instance.new("Part", UI["11"])
-UI["12"]["BottomSurface"] = Enum.SurfaceType.Smooth
-UI["12"]["Reflectance"] = 0.4
-UI["12"]["Color"] = Color3.fromRGB(100, 96, 99)
-UI["12"]["TopSurface"] = Enum.SurfaceType.Smooth
-UI["12"]["Locked"] = true
-UI["12"]["Size"] = Vector3.new(1, 0.8, 4)
--- [ERROR] cannot convert BrickColor
-UI["12"]["Rotation"] = Vector3.new(-54.622, 27.651, 84.101)
-UI["12"]["Name"] = [[Handle]]
--- [ERROR] cannot convert CFrame
-
--- // StarterGui.ScreenGui.Frame.TextButton.ClassicSword.Handle.Mesh \\ --
-UI["13"] = Instance.new("SpecialMesh", UI["12"])
-UI["13"]["MeshId"] = [[rbxasset://fonts/sword.mesh]]
-UI["13"]["TextureId"] = [[rbxasset://textures/SwordTexture.png]]
-UI["13"]["MeshType"] = Enum.MeshType.FileMesh
-
--- // StarterGui.ScreenGui.Frame.TextButton.ClassicSword.Handle.SwordSlash \\ --
-UI["14"] = Instance.new("Sound", UI["12"])
-UI["14"]["Volume"] = 0.7
-UI["14"]["Name"] = [[SwordSlash]]
-UI["14"]["SoundId"] = [[http://www.roblox.com/asset/?id=12222216]]
-
--- // StarterGui.ScreenGui.Frame.TextButton.ClassicSword.Handle.SwordLunge \\ --
-UI["15"] = Instance.new("Sound", UI["12"])
-UI["15"]["Volume"] = 0.6
-UI["15"]["Name"] = [[SwordLunge]]
-UI["15"]["SoundId"] = [[http://www.roblox.com/asset/?id=12222208]]
-
--- // StarterGui.ScreenGui.Frame.TextButton.ClassicSword.Handle.Unsheath \\ --
-UI["16"] = Instance.new("Sound", UI["12"])
-UI["16"]["Volume"] = 1
-UI["16"]["Name"] = [[Unsheath]]
-UI["16"]["SoundId"] = [[http://www.roblox.com/asset/?id=12222225]]
-
--- // StarterGui.ScreenGui.Frame.TextButton.ClassicSword.SwordScript \\ --
-UI["17"] = Instance.new("Script", UI["11"])
-UI["17"]["Name"] = [[SwordScript]]
-
--- // StarterGui.ScreenGui.Frame.TextButton.ClassicSword.MouseIcon \\ --
-UI["18"] = Instance.new("LocalScript", UI["11"])
-UI["18"]["Name"] = [[MouseIcon]]
-
 -- // StarterGui.ScreenGui.Frame.TextButton.LocalScript \\ --
-UI["19"] = Instance.new("LocalScript", UI["f"])
+UI["11"] = Instance.new("LocalScript", UI["f"])
 
 
--- // StarterGui.ScreenGui.Frame.TextButton \\ --
-UI["1a"] = Instance.new("TextButton", UI["2"])
-UI["1a"]["BorderSizePixel"] = 0
-UI["1a"]["TextSize"] = 30
-UI["1a"]["TextColor3"] = Color3.fromRGB(0, 0, 0)
-UI["1a"]["BackgroundColor3"] = Color3.fromRGB(255, 0, 5)
-UI["1a"]["FontFace"] = Font.new([[rbxasset://fonts/families/FredokaOne.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal)
-UI["1a"]["Size"] = UDim2.new(0, 195, 0, 42)
-UI["1a"]["BorderColor3"] = Color3.fromRGB(0, 0, 0)
-UI["1a"]["Text"] = [[Fly]]
-UI["1a"]["Position"] = UDim2.new(0.50435, 0, 0.30366, 0)
+-- // StarterGui.ScreenGui.Frame.TextButton.Noclip \\ --
+UI["12"] = Instance.new("Tool", UI["f"])
+UI["12"]["CanBeDropped"] = false
+UI["12"]["RequiresHandle"] = false
+UI["12"]["Name"] = [[Noclip]]
 
--- // StarterGui.ScreenGui.Frame.TextButton.UICorner \\ --
-UI["1b"] = Instance.new("UICorner", UI["1a"])
-UI["1b"]["CornerRadius"] = UDim.new(0, 40)
-
--- // StarterGui.ScreenGui.Frame.TextButton.LocalScript \\ --
-UI["1c"] = Instance.new("LocalScript", UI["1a"])
-
+-- // StarterGui.ScreenGui.Frame.TextButton.Noclip.NoclipScript \\ --
+UI["13"] = Instance.new("LocalScript", UI["12"])
+UI["13"]["Name"] = [[NoclipScript]]
 
 -- // StarterGui.ScreenGui.Frame.TextButton.LocalScript \\ --
 local function SCRIPT_8()
@@ -265,90 +203,89 @@ local script = UI["c"]
 	end)
 end
 task.spawn(SCRIPT_c)
--- // StarterGui.ScreenGui.Frame.TextButton.ClassicSword.MouseIcon \\ --
-local function SCRIPT_18()
-local script = UI["18"]
-	--Made by Luckymaxer
-	
-	Mouse_Icon = "rbxasset://textures/GunCursor.png"
-	Reloading_Icon = "rbxasset://textures/GunWaitCursor.png"
-	
-	Tool = script.Parent
-	
-	Mouse = nil
-	
-	function UpdateIcon()
-		if Mouse then
-			Mouse.Icon = Tool.Enabled and Mouse_Icon or Reloading_Icon
-		end
-	end
-	
-	function OnEquipped(ToolMouse)
-		Mouse = ToolMouse
-		UpdateIcon()
-	end
-	
-	function OnChanged(Property)
-		if Property == "Enabled" then
-			UpdateIcon()
-		end
-	end
-	
-	Tool.Equipped:Connect(OnEquipped)
-	Tool.Changed:Connect(OnChanged)
-	
-end
-task.spawn(SCRIPT_18)
 -- // StarterGui.ScreenGui.Frame.TextButton.LocalScript \\ --
-local function SCRIPT_19()
-local script = UI["19"]
+local function SCRIPT_11()
+local script = UI["11"]
 	local p = game.Players.LocalPlayer
 	
 	script.Parent.MouseButton1Click:connect(function()
-		local tool = script.Parent.ClassicSword:Clone()
+		local tool = script.Parent.Noclip:Clone()
 		tool.Parent = p.Backpack
 	end)
 end
-task.spawn(SCRIPT_19)
--- // StarterGui.ScreenGui.Frame.TextButton.LocalScript \\ --
-local function SCRIPT_1c()
-local script = UI["1c"]
-	local isFlying = false
-	local camera = workspace.CurrentCamera
-	local char = game.Players.LocalPlayer.Character
-	local hrp = char:WaitForChild("HumanoidRootPart")
+task.spawn(SCRIPT_11)
+-- // StarterGui.ScreenGui.Frame.TextButton.Noclip.NoclipScript \\ --
+local function SCRIPT_13()
+local script = UI["13"]
+	------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+	-- @CloneTrooper1019, 2015
+	------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 	
-	local bodyPos = Instance.new("BodyPosition")
-	bodyPos.MaxForce = Vector3.new()
-	bodyPos.D = 10
-	bodyPos.P = 100
-	bodyPos.Parent = hrp
+	local c = workspace.CurrentCamera
+	local player = game.Players.LocalPlayer
+	local userInput = game:GetService("UserInputService")
+	local rs = game:GetService("RunService")
+	local starterPlayer = game:GetService("StarterPlayer")
 	
-	local bodyGyro = Instance.new("BodyGyro")
-	bodyGyro.MaxTorque = Vector3.new()
-	bodyGyro.D = 10
-	bodyGyro.Parent = hrp
+	local selected = false
+	local speed = 60
+	local lastUpdate = 0
 	
-	script.Parent.MouseButton1Click:Connect(function()
-		isFlying = not isFlying
-	end)
-	
-	script.Parent.MouseButton2Click:Connect(function()
-		isFlying = false
-	end)
-	
-	game:GetService("RunService").RenderStepped:Connect(function()
-		if isFlying then
-			bodyPos.MaxForce = Vector3.new(math.huge, math.huge,math)
-			bodyGyro.MaxTorque = Vector3.new(math.huge, math.huge, math.huge)
-			bodyPos.Position = hrp.Position +((hrp.Position - camera.CFrame.Position).Unit * 10)
-			bodyGyro.CFrame = CFrame.new(camera.CFrame.Position, hrp.Position)
-		else
-			bodyPos.MaxForce = Vector3.new()
-			bodyGyro.MaxTorque = Vector3.new()
+	function getNextMovement(deltaTime)
+		local nextMove = Vector3.new()
+		-- Left/Right
+		if userInput:IsKeyDown("A") or userInput:IsKeyDown("Left") then
+			nextMove = Vector3.new(-1,0,0)
+		elseif userInput:IsKeyDown("D") or userInput:IsKeyDown("Right") then
+			nextMove = Vector3.new(1,0,0)
 		end
-	end)
+		-- Forward/Back
+		if userInput:IsKeyDown("W") or userInput:IsKeyDown("Up") then
+			nextMove = nextMove + Vector3.new(0,0,-1)
+		elseif userInput:IsKeyDown("S") or userInput:IsKeyDown("Down") then
+			nextMove = nextMove + Vector3.new(0,0,1)
+		end
+		-- Up/Down
+		if userInput:IsKeyDown("Space") then
+			nextMove = nextMove + Vector3.new(0,1,0)
+		elseif userInput:IsKeyDown("LeftControl") then
+			nextMove = nextMove + Vector3.new(0,-1,0)
+		end
+		return CFrame.new( nextMove * (speed * deltaTime) )
+	end
+	
+	function onSelected()
+		local char = player.Character
+		if char then
+			local humanoid = char:WaitForChild("Humanoid")
+			local root = char:WaitForChild("HumanoidRootPart")
+			currentPos = root.Position
+			selected = true
+			root.Anchored = true
+			lastUpdate = tick()
+			humanoid.PlatformStand = true
+			while selected do
+				wait()
+				local delta = tick()-lastUpdate
+				local look = (c.Focus.p-c.CoordinateFrame.p).unit
+				local move = getNextMovement(delta)
+				local pos = root.Position
+				root.CFrame = CFrame.new(pos,pos+look) * move
+				lastUpdate = tick()
+			end
+			root.Anchored = false
+			root.Velocity = Vector3.new()
+			humanoid.PlatformStand = false
+		end
+	end
+	
+	function onDeselected()
+		selected = false
+	end
+	
+	script.Parent.Equipped:connect(onSelected)
+	script.Parent.Unequipped:connect(onDeselected)
 end
-task.spawn(SCRIPT_1c)
+task.spawn(SCRIPT_13)
 
 return UI["1"], require;
