@@ -1,0 +1,294 @@
+-- // GUI TO LUA \\ --
+
+-- // INSTANCES: 25 | SCRIPTS: 5 | MODULES: 0 \\ --
+
+local UI = {}
+
+-- // StarterGui.ScreenGui \\ --
+UI["1"] = Instance.new("ScreenGui", game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui"))
+UI["1"]["ZIndexBehavior"] = Enum.ZIndexBehavior.Sibling
+
+-- // StarterGui.ScreenGui.Frame \\ --
+UI["2"] = Instance.new("Frame", UI["1"])
+UI["2"]["BorderSizePixel"] = 0
+UI["2"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255)
+UI["2"]["Size"] = UDim2.new(0, 460, 0, 191)
+UI["2"]["Position"] = UDim2.new(0.26886, 0, 0.33287, 0)
+UI["2"]["BorderColor3"] = Color3.fromRGB(0, 0, 0)
+
+-- // StarterGui.ScreenGui.Frame.UICorner \\ --
+UI["3"] = Instance.new("UICorner", UI["2"])
+UI["3"]["CornerRadius"] = UDim.new(0, 30)
+
+-- // StarterGui.ScreenGui.Frame.TextLabel \\ --
+UI["4"] = Instance.new("TextLabel", UI["2"])
+UI["4"]["TextWrapped"] = true
+UI["4"]["BorderSizePixel"] = 0
+UI["4"]["TextScaled"] = true
+UI["4"]["BackgroundColor3"] = Color3.fromRGB(82, 82, 82)
+UI["4"]["TextSize"] = 6
+UI["4"]["FontFace"] = Font.new([[rbxasset://fonts/families/FredokaOne.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+UI["4"]["TextColor3"] = Color3.fromRGB(0, 0, 0)
+UI["4"]["Size"] = UDim2.new(0, 460, 0, 50)
+UI["4"]["BorderColor3"] = Color3.fromRGB(0, 0, 0)
+UI["4"]["Text"] = [[Sebi's UI v1]]
+
+-- // StarterGui.ScreenGui.Frame.TextLabel.UICorner \\ --
+UI["5"] = Instance.new("UICorner", UI["4"])
+UI["5"]["CornerRadius"] = UDim.new(0, 40)
+
+-- // StarterGui.ScreenGui.Frame.TextButton \\ --
+UI["6"] = Instance.new("TextButton", UI["2"])
+UI["6"]["TextWrapped"] = true
+UI["6"]["BorderSizePixel"] = 0
+UI["6"]["TextSize"] = 30
+UI["6"]["TextColor3"] = Color3.fromRGB(0, 0, 0)
+UI["6"]["BackgroundColor3"] = Color3.fromRGB(255, 0, 5)
+UI["6"]["FontFace"] = Font.new([[rbxasset://fonts/families/FredokaOne.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+UI["6"]["Size"] = UDim2.new(0, 195, 0, 40)
+UI["6"]["BorderColor3"] = Color3.fromRGB(0, 0, 0)
+UI["6"]["Text"] = [[Reset Character]]
+UI["6"]["Position"] = UDim2.new(0.06522, 0, 0.57068, 0)
+
+-- // StarterGui.ScreenGui.Frame.TextButton.UICorner \\ --
+UI["7"] = Instance.new("UICorner", UI["6"])
+UI["7"]["CornerRadius"] = UDim.new(0, 40)
+
+-- // StarterGui.ScreenGui.Frame.TextButton.LocalScript \\ --
+UI["8"] = Instance.new("LocalScript", UI["6"])
+
+
+-- // StarterGui.ScreenGui.Frame.TextButton \\ --
+UI["9"] = Instance.new("TextButton", UI["2"])
+UI["9"]["BorderSizePixel"] = 0
+UI["9"]["TextSize"] = 30
+UI["9"]["TextColor3"] = Color3.fromRGB(0, 0, 0)
+UI["9"]["BackgroundColor3"] = Color3.fromRGB(255, 0, 5)
+UI["9"]["FontFace"] = Font.new([[rbxasset://fonts/families/FredokaOne.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+UI["9"]["Size"] = UDim2.new(0, 195, 0, 40)
+UI["9"]["BorderColor3"] = Color3.fromRGB(0, 0, 0)
+UI["9"]["Text"] = [[ Kick Yourself]]
+UI["9"]["Position"] = UDim2.new(0.50435, 0, 0.57068, 0)
+
+-- // StarterGui.ScreenGui.Frame.TextButton.UICorner \\ --
+UI["a"] = Instance.new("UICorner", UI["9"])
+UI["a"]["CornerRadius"] = UDim.new(0, 40)
+
+-- // StarterGui.ScreenGui.Frame.TextButton.LocalScript \\ --
+UI["b"] = Instance.new("LocalScript", UI["9"])
+
+
+-- // StarterGui.ScreenGui.Frame.LocalScript \\ --
+UI["c"] = Instance.new("LocalScript", UI["2"])
+
+
+-- // StarterGui.ScreenGui.Frame.TextLabel \\ --
+UI["d"] = Instance.new("TextLabel", UI["2"])
+UI["d"]["TextWrapped"] = true
+UI["d"]["BorderSizePixel"] = 0
+UI["d"]["BackgroundColor3"] = Color3.fromRGB(6, 61, 213)
+UI["d"]["TextSize"] = 30
+UI["d"]["FontFace"] = Font.new([[rbxasset://fonts/families/FredokaOne.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+UI["d"]["TextColor3"] = Color3.fromRGB(0, 0, 0)
+UI["d"]["Size"] = UDim2.new(0, 460, 0, 32)
+UI["d"]["BorderColor3"] = Color3.fromRGB(0, 0, 0)
+UI["d"]["Text"] = [[You can drag the UI!]]
+UI["d"]["Position"] = UDim2.new(0, 0, 0.83246, 0)
+
+-- // StarterGui.ScreenGui.Frame.TextLabel.UICorner \\ --
+UI["e"] = Instance.new("UICorner", UI["d"])
+UI["e"]["CornerRadius"] = UDim.new(0, 40)
+
+-- // StarterGui.ScreenGui.Frame.TextButton \\ --
+UI["f"] = Instance.new("TextButton", UI["2"])
+UI["f"]["BorderSizePixel"] = 0
+UI["f"]["TextSize"] = 30
+UI["f"]["TextColor3"] = Color3.fromRGB(0, 0, 0)
+UI["f"]["BackgroundColor3"] = Color3.fromRGB(255, 0, 5)
+UI["f"]["FontFace"] = Font.new([[rbxasset://fonts/families/FredokaOne.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+UI["f"]["Size"] = UDim2.new(0, 397, 0, 42)
+UI["f"]["BorderColor3"] = Color3.fromRGB(0, 0, 0)
+UI["f"]["Text"] = [[Sword]]
+UI["f"]["Position"] = UDim2.new(0.06522, 0, 0.30366, 0)
+
+-- // StarterGui.ScreenGui.Frame.TextButton.UICorner \\ --
+UI["10"] = Instance.new("UICorner", UI["f"])
+UI["10"]["CornerRadius"] = UDim.new(0, 40)
+
+-- // StarterGui.ScreenGui.Frame.TextButton.ClassicSword \\ --
+UI["11"] = Instance.new("Tool", UI["f"])
+-- [ERROR] cannot convert Grip
+-- [ERROR] cannot convert WorldPivot
+UI["11"]["TextureId"] = [[rbxasset://Textures/Sword128.png]]
+UI["11"]["Name"] = [[ClassicSword]]
+
+-- // StarterGui.ScreenGui.Frame.TextButton.ClassicSword.Handle \\ --
+UI["12"] = Instance.new("Part", UI["11"])
+UI["12"]["BottomSurface"] = Enum.SurfaceType.Smooth
+UI["12"]["Reflectance"] = 0.4
+UI["12"]["Color"] = Color3.fromRGB(100, 96, 99)
+UI["12"]["TopSurface"] = Enum.SurfaceType.Smooth
+UI["12"]["Locked"] = true
+UI["12"]["Size"] = Vector3.new(1, 0.8, 4)
+-- [ERROR] cannot convert BrickColor
+UI["12"]["Rotation"] = Vector3.new(-54.622, 27.651, 84.101)
+UI["12"]["Name"] = [[Handle]]
+-- [ERROR] cannot convert CFrame
+
+-- // StarterGui.ScreenGui.Frame.TextButton.ClassicSword.Handle.Mesh \\ --
+UI["13"] = Instance.new("SpecialMesh", UI["12"])
+UI["13"]["MeshId"] = [[rbxasset://fonts/sword.mesh]]
+UI["13"]["TextureId"] = [[rbxasset://textures/SwordTexture.png]]
+UI["13"]["MeshType"] = Enum.MeshType.FileMesh
+
+-- // StarterGui.ScreenGui.Frame.TextButton.ClassicSword.Handle.SwordSlash \\ --
+UI["14"] = Instance.new("Sound", UI["12"])
+UI["14"]["Volume"] = 0.7
+UI["14"]["Name"] = [[SwordSlash]]
+UI["14"]["SoundId"] = [[http://www.roblox.com/asset/?id=12222216]]
+
+-- // StarterGui.ScreenGui.Frame.TextButton.ClassicSword.Handle.SwordLunge \\ --
+UI["15"] = Instance.new("Sound", UI["12"])
+UI["15"]["Volume"] = 0.6
+UI["15"]["Name"] = [[SwordLunge]]
+UI["15"]["SoundId"] = [[http://www.roblox.com/asset/?id=12222208]]
+
+-- // StarterGui.ScreenGui.Frame.TextButton.ClassicSword.Handle.Unsheath \\ --
+UI["16"] = Instance.new("Sound", UI["12"])
+UI["16"]["Volume"] = 1
+UI["16"]["Name"] = [[Unsheath]]
+UI["16"]["SoundId"] = [[http://www.roblox.com/asset/?id=12222225]]
+
+-- // StarterGui.ScreenGui.Frame.TextButton.ClassicSword.SwordScript \\ --
+UI["17"] = Instance.new("Script", UI["11"])
+UI["17"]["Name"] = [[SwordScript]]
+
+-- // StarterGui.ScreenGui.Frame.TextButton.ClassicSword.MouseIcon \\ --
+UI["18"] = Instance.new("LocalScript", UI["11"])
+UI["18"]["Name"] = [[MouseIcon]]
+
+-- // StarterGui.ScreenGui.Frame.TextButton.LocalScript \\ --
+UI["19"] = Instance.new("LocalScript", UI["f"])
+
+
+-- // StarterGui.ScreenGui.Frame.TextButton.LocalScript \\ --
+local function SCRIPT_8()
+local script = UI["8"]
+	script.Parent.MouseButton1Click:Connect(function()
+		game.Players.LocalPlayer.Character.Humanoid.Health = 0
+	end)
+end
+task.spawn(SCRIPT_8)
+-- // StarterGui.ScreenGui.Frame.TextButton.LocalScript \\ --
+local function SCRIPT_b()
+local script = UI["b"]
+	script.Parent.MouseButton1Click:Connect(function()
+		game.Players.LocalPlayer:Kick("You pressed the Kick button")
+	end)
+end
+task.spawn(SCRIPT_b)
+-- // StarterGui.ScreenGui.Frame.LocalScript \\ --
+local function SCRIPT_c()
+local script = UI["c"]
+	--// Services
+	local Players = game:GetService('Players')
+	local UIS = game:GetService("UserInputService")
+	
+	--// Variables
+	local UI = script.Parent
+	
+	local Player = Players.LocalPlayer
+	local Mouse = Player:GetMouse()
+	
+	local Hovered = false
+	local Holding = false
+	local MoveCon = nil
+	
+	local InitialX, InitialY, UIInitialPos
+	
+	--// Functions
+	
+	local function Drag()
+		if Holding == false then MoveCon:Disconnect(); return end
+		local distanceMovedX = InitialX - Mouse.X
+		local distanceMovedY = InitialY - Mouse.Y
+	
+		UI.Position = UIInitialPos - UDim2.new(0, distanceMovedX, 0, distanceMovedY)
+	end
+	
+	--// Connections
+	
+	UI.MouseEnter:Connect(function()
+		Hovered = true
+	end)
+	
+	UI.MouseLeave:Connect(function()
+		Hovered = false
+	end)
+	
+	UIS.InputBegan:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+			Holding = Hovered
+			if Holding then
+				InitialX, InitialY = Mouse.X, Mouse.Y
+				UIInitialPos = UI.Position
+	
+				MoveCon = Mouse.Move:Connect(Drag)
+			end
+		end
+	end)
+	
+	UIS.InputEnded:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+			Holding = false
+		end
+	end)
+end
+task.spawn(SCRIPT_c)
+-- // StarterGui.ScreenGui.Frame.TextButton.ClassicSword.MouseIcon \\ --
+local function SCRIPT_18()
+local script = UI["18"]
+	--Made by Luckymaxer
+	
+	Mouse_Icon = "rbxasset://textures/GunCursor.png"
+	Reloading_Icon = "rbxasset://textures/GunWaitCursor.png"
+	
+	Tool = script.Parent
+	
+	Mouse = nil
+	
+	function UpdateIcon()
+		if Mouse then
+			Mouse.Icon = Tool.Enabled and Mouse_Icon or Reloading_Icon
+		end
+	end
+	
+	function OnEquipped(ToolMouse)
+		Mouse = ToolMouse
+		UpdateIcon()
+	end
+	
+	function OnChanged(Property)
+		if Property == "Enabled" then
+			UpdateIcon()
+		end
+	end
+	
+	Tool.Equipped:Connect(OnEquipped)
+	Tool.Changed:Connect(OnChanged)
+	
+end
+task.spawn(SCRIPT_18)
+-- // StarterGui.ScreenGui.Frame.TextButton.LocalScript \\ --
+local function SCRIPT_19()
+local script = UI["19"]
+	local p = game.Players.LocalPlayer
+	
+	script.Parent.MouseButton1Click:connect(function()
+		local tool = script.Parent.ClassicSword:Clone()
+		tool.Parent = p.Backpack
+	end)
+end
+task.spawn(SCRIPT_19)
+
+return UI["1"], require;
