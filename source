@@ -1,6 +1,6 @@
 -- // GUI TO LUA \\ --
 
--- // INSTANCES: 23 | SCRIPTS: 5 | MODULES: 0 \\ --
+-- // INSTANCES: 26 | SCRIPTS: 6 | MODULES: 0 \\ --
 
 local UI = {}
 
@@ -31,7 +31,7 @@ UI["4"]["FontFace"] = Font.new([[rbxasset://fonts/families/FredokaOne.json]], En
 UI["4"]["TextColor3"] = Color3.fromRGB(0, 0, 0)
 UI["4"]["Size"] = UDim2.new(0, 460, 0, 43)
 UI["4"]["BorderColor3"] = Color3.fromRGB(0, 0, 0)
-UI["4"]["Text"] = [[Sebi's UI v1.1.2Hammer]]
+UI["4"]["Text"] = [[Sebi's UI v1.1.3 Speed]]
 
 -- // StarterGui.ScreenGui.Frame.TextLabel.UICorner \\ --
 UI["5"] = Instance.new("UICorner", UI["4"])
@@ -155,6 +155,26 @@ UI["16"] = Instance.new("LocalScript", UI["14"])
 UI["17"] = Instance.new("UIGradient", UI["2"])
 UI["17"]["Transparency"] = NumberSequence.new{NumberSequenceKeypoint.new(0.000, 0.5),NumberSequenceKeypoint.new(1.000, 0.5)}
 UI["17"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(12, 69, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(12, 69, 255))}
+
+-- // StarterGui.ScreenGui.Frame.TextButton \\ --
+UI["18"] = Instance.new("TextButton", UI["2"])
+UI["18"]["BorderSizePixel"] = 0
+UI["18"]["TextSize"] = 30
+UI["18"]["TextColor3"] = Color3.fromRGB(0, 0, 0)
+UI["18"]["BackgroundColor3"] = Color3.fromRGB(255, 0, 5)
+UI["18"]["FontFace"] = Font.new([[rbxasset://fonts/families/FredokaOne.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+UI["18"]["Size"] = UDim2.new(0, 195, 0, 40)
+UI["18"]["BorderColor3"] = Color3.fromRGB(0, 0, 0)
+UI["18"]["Text"] = [[Speed]]
+UI["18"]["Position"] = UDim2.new(0.05435, 0, 0.61486, 0)
+
+-- // StarterGui.ScreenGui.Frame.TextButton.UICorner \\ --
+UI["19"] = Instance.new("UICorner", UI["18"])
+UI["19"]["CornerRadius"] = UDim.new(0, 40)
+
+-- // StarterGui.ScreenGui.Frame.TextButton.LocalScript \\ --
+UI["1a"] = Instance.new("LocalScript", UI["18"])
+
 
 -- // StarterGui.ScreenGui.Frame.TextButton.LocalScript \\ --
 local function SCRIPT_9()
@@ -281,5 +301,19 @@ local script = UI["16"]
 	end)
 end
 task.spawn(SCRIPT_16)
+-- // StarterGui.ScreenGui.Frame.TextButton.LocalScript \\ --
+local function SCRIPT_1a()
+local script = UI["1a"]
+	local Player = script.Parent.Parent.Parent.Parent.Parent
+	
+	script.Parent.MouseButton1Click:Connect(function()
+	
+		local Character  = game.workspace:FindFirstChild(Player.Name)
+	
+		Character.Humanoid.WalkSpeed = Character.Humanoid.WalkSpeed + 50
+	
+	end)
+end
+task.spawn(SCRIPT_1a)
 
 return UI["1"], require;
