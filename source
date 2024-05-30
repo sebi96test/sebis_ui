@@ -1,6 +1,6 @@
 -- // GUI TO LUA \\ --
 
--- // INSTANCES: 28 | SCRIPTS: 6 | MODULES: 0 \\ --
+-- // INSTANCES: 25 | SCRIPTS: 5 | MODULES: 0 \\ --
 
 local UI = {}
 
@@ -31,7 +31,7 @@ UI["4"]["FontFace"] = Font.new([[rbxasset://fonts/families/FredokaOne.json]], En
 UI["4"]["TextColor3"] = Color3.fromRGB(0, 0, 0)
 UI["4"]["Size"] = UDim2.new(0, 460, 0, 43)
 UI["4"]["BorderColor3"] = Color3.fromRGB(0, 0, 0)
-UI["4"]["Text"] = [[Sebi's UI v1.1.4HighJump]]
+UI["4"]["Text"] = [[Sebi's UI v1.1.3Speed]]
 
 -- // StarterGui.ScreenGui.Frame.TextLabel.UICorner \\ --
 UI["5"] = Instance.new("UICorner", UI["4"])
@@ -172,26 +172,6 @@ UI["18"]["Position"] = UDim2.new(0.05435, 0, 0.59459, 0)
 UI["19"] = Instance.new("UICorner", UI["18"])
 UI["19"]["CornerRadius"] = UDim.new(0, 40)
 
--- // StarterGui.ScreenGui.Frame.TextButton \\ --
-UI["1a"] = Instance.new("TextButton", UI["2"])
-UI["1a"]["BorderSizePixel"] = 0
-UI["1a"]["TextSize"] = 30
-UI["1a"]["TextColor3"] = Color3.fromRGB(0, 0, 0)
-UI["1a"]["BackgroundColor3"] = Color3.fromRGB(255, 0, 5)
-UI["1a"]["FontFace"] = Font.new([[rbxasset://fonts/families/FredokaOne.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal)
-UI["1a"]["Size"] = UDim2.new(0, 195, 0, 40)
-UI["1a"]["BorderColor3"] = Color3.fromRGB(0, 0, 0)
-UI["1a"]["Text"] = [[High Jump]]
-UI["1a"]["Position"] = UDim2.new(0.50435, 0, 0.59459, 0)
-
--- // StarterGui.ScreenGui.Frame.TextButton.UICorner \\ --
-UI["1b"] = Instance.new("UICorner", UI["1a"])
-UI["1b"]["CornerRadius"] = UDim.new(0, 40)
-
--- // StarterGui.ScreenGui.Frame.TextButton.LocalScript \\ --
-UI["1c"] = Instance.new("LocalScript", UI["1a"])
-
-
 -- // StarterGui.ScreenGui.Frame.TextButton.LocalScript \\ --
 local function SCRIPT_9()
 local script = UI["9"]
@@ -317,19 +297,5 @@ local script = UI["16"]
 	end)
 end
 task.spawn(SCRIPT_16)
--- // StarterGui.ScreenGui.Frame.TextButton.LocalScript \\ --
-local function SCRIPT_1c()
-local script = UI["1c"]
-	local Player = script.Parent.Parent.Parent.Parent.Parent
-	
-	script.Parent.MouseButton1Click:Connect(function()
-	
-		local Character  = game.workspace:FindFirstChild(Player.Name)
-	
-		Character.Humanoid.JumpHeight = Character.Humanoid.JumpHeight + 10
-	
-	end)
-end
-task.spawn(SCRIPT_1c)
 
 return UI["1"], require;
