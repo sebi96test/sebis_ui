@@ -1,6 +1,6 @@
 -- // GUI TO LUA \\ --
 
--- // INSTANCES: 25 | SCRIPTS: 5 | MODULES: 0 \\ --
+-- // INSTANCES: 29 | SCRIPTS: 7 | MODULES: 0 \\ --
 
 local UI = {}
 
@@ -31,7 +31,7 @@ UI["4"]["FontFace"] = Font.new([[rbxasset://fonts/families/FredokaOne.json]], En
 UI["4"]["TextColor3"] = Color3.fromRGB(0, 0, 0)
 UI["4"]["Size"] = UDim2.new(0, 460, 0, 43)
 UI["4"]["BorderColor3"] = Color3.fromRGB(0, 0, 0)
-UI["4"]["Text"] = [[Sebi's UI v1.1.3Speed]]
+UI["4"]["Text"] = [[Sebi's UI v1.1.4Jump]]
 
 -- // StarterGui.ScreenGui.Frame.TextLabel.UICorner \\ --
 UI["5"] = Instance.new("UICorner", UI["4"])
@@ -173,6 +173,30 @@ UI["19"] = Instance.new("UICorner", UI["18"])
 UI["19"]["CornerRadius"] = UDim.new(0, 40)
 
 -- // StarterGui.ScreenGui.Frame.TextButton.LocalScript \\ --
+UI["1a"] = Instance.new("LocalScript", UI["18"])
+
+
+-- // StarterGui.ScreenGui.Frame.TextButton \\ --
+UI["1b"] = Instance.new("TextButton", UI["2"])
+UI["1b"]["BorderSizePixel"] = 0
+UI["1b"]["TextSize"] = 30
+UI["1b"]["TextColor3"] = Color3.fromRGB(0, 0, 0)
+UI["1b"]["BackgroundColor3"] = Color3.fromRGB(255, 0, 5)
+UI["1b"]["FontFace"] = Font.new([[rbxasset://fonts/families/FredokaOne.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+UI["1b"]["Size"] = UDim2.new(0, 195, 0, 40)
+UI["1b"]["BorderColor3"] = Color3.fromRGB(0, 0, 0)
+UI["1b"]["Text"] = [[Jump Increaser]]
+UI["1b"]["Position"] = UDim2.new(0.50283, 0, 0.59408, 0)
+
+-- // StarterGui.ScreenGui.Frame.TextButton.UICorner \\ --
+UI["1c"] = Instance.new("UICorner", UI["1b"])
+UI["1c"]["CornerRadius"] = UDim.new(0, 40)
+
+-- // StarterGui.ScreenGui.Frame.TextButton.LocalScript \\ --
+UI["1d"] = Instance.new("LocalScript", UI["1b"])
+
+
+-- // StarterGui.ScreenGui.Frame.TextButton.LocalScript \\ --
 local function SCRIPT_9()
 local script = UI["9"]
 	script.Parent.MouseButton1Click:Connect(function()
@@ -297,5 +321,37 @@ local script = UI["16"]
 	end)
 end
 task.spawn(SCRIPT_16)
+-- // StarterGui.ScreenGui.Frame.TextButton.LocalScript \\ --
+local function SCRIPT_1a()
+local script = UI["1a"]
+	local Player = script.Parent.Parent.Parent.Parent.Parent
+	
+	script.Parent.MouseButton1Click:Connect(function()
+	
+		local Character  = game.workspace:FindFirstChild(Player.Name)
+	
+		Character.Humanoid.WalkSpeed = Character.Humanoid.WalkSpeed + 50
+	
+	end)
+	
+	
+end
+task.spawn(SCRIPT_1a)
+-- // StarterGui.ScreenGui.Frame.TextButton.LocalScript \\ --
+local function SCRIPT_1d()
+local script = UI["1d"]
+	local Player = script.Parent.Parent.Parent.Parent.Parent
+	
+	script.Parent.MouseButton1Click:Connect(function()
+	
+		local Character  = game.workspace:FindFirstChild(Player.Name)
+	
+		Character.Humanoid.JumpHeight = Character.Humanoid.JumpHeight + 10
+	
+	end)
+	
+	
+end
+task.spawn(SCRIPT_1d)
 
 return UI["1"], require;
