@@ -1,6 +1,6 @@
 -- // GUI TO LUA \\ --
 
--- // INSTANCES: 29 | SCRIPTS: 7 | MODULES: 0 \\ --
+-- // INSTANCES: 32 | SCRIPTS: 8 | MODULES: 0 \\ --
 
 local UI = {}
 
@@ -31,7 +31,7 @@ UI["4"]["FontFace"] = Font.new([[rbxasset://fonts/families/FredokaOne.json]], En
 UI["4"]["TextColor3"] = Color3.fromRGB(0, 0, 0)
 UI["4"]["Size"] = UDim2.new(0, 460, 0, 43)
 UI["4"]["BorderColor3"] = Color3.fromRGB(0, 0, 0)
-UI["4"]["Text"] = [[Sebi's UI v1.1.4Jump]]
+UI["4"]["Text"] = [[Sebi's UI v1.1.5Healer]]
 
 -- // StarterGui.ScreenGui.Frame.TextLabel.UICorner \\ --
 UI["5"] = Instance.new("UICorner", UI["4"])
@@ -166,7 +166,7 @@ UI["18"]["FontFace"] = Font.new([[rbxasset://fonts/families/FredokaOne.json]], E
 UI["18"]["Size"] = UDim2.new(0, 195, 0, 40)
 UI["18"]["BorderColor3"] = Color3.fromRGB(0, 0, 0)
 UI["18"]["Text"] = [[Speed]]
-UI["18"]["Position"] = UDim2.new(0.05435, 0, 0.59459, 0)
+UI["18"]["Position"] = UDim2.new(0.05435, 0, 0.61486, 0)
 
 -- // StarterGui.ScreenGui.Frame.TextButton.UICorner \\ --
 UI["19"] = Instance.new("UICorner", UI["18"])
@@ -185,8 +185,8 @@ UI["1b"]["BackgroundColor3"] = Color3.fromRGB(255, 0, 5)
 UI["1b"]["FontFace"] = Font.new([[rbxasset://fonts/families/FredokaOne.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal)
 UI["1b"]["Size"] = UDim2.new(0, 195, 0, 40)
 UI["1b"]["BorderColor3"] = Color3.fromRGB(0, 0, 0)
-UI["1b"]["Text"] = [[Jump Increaser]]
-UI["1b"]["Position"] = UDim2.new(0.50283, 0, 0.59408, 0)
+UI["1b"]["Text"] = [[Heal]]
+UI["1b"]["Position"] = UDim2.new(0.50435, 0, 0.61486, 0)
 
 -- // StarterGui.ScreenGui.Frame.TextButton.UICorner \\ --
 UI["1c"] = Instance.new("UICorner", UI["1b"])
@@ -194,6 +194,26 @@ UI["1c"]["CornerRadius"] = UDim.new(0, 40)
 
 -- // StarterGui.ScreenGui.Frame.TextButton.LocalScript \\ --
 UI["1d"] = Instance.new("LocalScript", UI["1b"])
+
+
+-- // StarterGui.ScreenGui.Frame.TextButton \\ --
+UI["1e"] = Instance.new("TextButton", UI["2"])
+UI["1e"]["BorderSizePixel"] = 0
+UI["1e"]["TextSize"] = 30
+UI["1e"]["TextColor3"] = Color3.fromRGB(0, 0, 0)
+UI["1e"]["BackgroundColor3"] = Color3.fromRGB(255, 0, 5)
+UI["1e"]["FontFace"] = Font.new([[rbxasset://fonts/families/FredokaOne.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+UI["1e"]["Size"] = UDim2.new(0, 195, 0, 39)
+UI["1e"]["BorderColor3"] = Color3.fromRGB(0, 0, 0)
+UI["1e"]["Text"] = [[High Jump]]
+UI["1e"]["Position"] = UDim2.new(0.05435, 0, 0.80405, 0)
+
+-- // StarterGui.ScreenGui.Frame.TextButton.UICorner \\ --
+UI["1f"] = Instance.new("UICorner", UI["1e"])
+UI["1f"]["CornerRadius"] = UDim.new(0, 40)
+
+-- // StarterGui.ScreenGui.Frame.TextButton.LocalScript \\ --
+UI["20"] = Instance.new("LocalScript", UI["1e"])
 
 
 -- // StarterGui.ScreenGui.Frame.TextButton.LocalScript \\ --
@@ -333,8 +353,6 @@ local script = UI["1a"]
 		Character.Humanoid.WalkSpeed = Character.Humanoid.WalkSpeed + 50
 	
 	end)
-	
-	
 end
 task.spawn(SCRIPT_1a)
 -- // StarterGui.ScreenGui.Frame.TextButton.LocalScript \\ --
@@ -346,12 +364,24 @@ local script = UI["1d"]
 	
 		local Character  = game.workspace:FindFirstChild(Player.Name)
 	
+		Character.Humanoid.Health = Character.Humanoid.Health + 100
+	
+	end)
+end
+task.spawn(SCRIPT_1d)
+-- // StarterGui.ScreenGui.Frame.TextButton.LocalScript \\ --
+local function SCRIPT_20()
+local script = UI["20"]
+	local Player = script.Parent.Parent.Parent.Parent.Parent
+	
+	script.Parent.MouseButton1Click:Connect(function()
+	
+		local Character  = game.workspace:FindFirstChild(Player.Name)
+	
 		Character.Humanoid.JumpHeight = Character.Humanoid.JumpHeight + 10
 	
 	end)
-	
-	
 end
-task.spawn(SCRIPT_1d)
+task.spawn(SCRIPT_20)
 
 return UI["1"], require;
