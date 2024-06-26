@@ -20,30 +20,29 @@ UI["2"]["BorderColor3"] = Color3.fromRGB(0, 0, 0)
 UI["3"] = Instance.new("UICorner", UI["2"])
 UI["3"]["CornerRadius"] = UDim.new(0, 30)
 
--- // StarterGui.ScreenGui.Frame.TextLabel \\ --
-UI["4"] = Instance.new("TextLabel", UI["2"])
+-- // StarterGui.ScreenGui.Frame.TextButton \\ --
+UI["4"] = Instance.new("TextButton", UI["2"])
 UI["4"]["TextWrapped"] = true
 UI["4"]["BorderSizePixel"] = 0
-UI["4"]["TextScaled"] = true
-UI["4"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255)
-UI["4"]["TextSize"] = 6
-UI["4"]["FontFace"] = Font.new([[rbxasset://fonts/families/FredokaOne.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+UI["4"]["TextSize"] = 30
 UI["4"]["TextColor3"] = Color3.fromRGB(0, 0, 0)
-UI["4"]["Size"] = UDim2.new(0, 460, 0, 43)
+UI["4"]["BackgroundColor3"] = Color3.fromRGB(255, 0, 5)
+UI["4"]["FontFace"] = Font.new([[rbxasset://fonts/families/FredokaOne.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+UI["4"]["Size"] = UDim2.new(0, 195, 0, 40)
 UI["4"]["BorderColor3"] = Color3.fromRGB(0, 0, 0)
-UI["4"]["Text"] = [[Sebi's UI v1.1.5Healer]]
+UI["4"]["Text"] = [[Reset Character]]
+UI["4"]["Position"] = UDim2.new(0.50435, 0, 0.20582, 0)
 
--- // StarterGui.ScreenGui.Frame.TextLabel.UICorner \\ --
+-- // StarterGui.ScreenGui.Frame.TextButton.UICorner \\ --
 UI["5"] = Instance.new("UICorner", UI["4"])
 UI["5"]["CornerRadius"] = UDim.new(0, 40)
 
--- // StarterGui.ScreenGui.Frame.TextLabel.UIGradient \\ --
-UI["6"] = Instance.new("UIGradient", UI["4"])
-UI["6"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(82, 82, 82)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(82, 82, 82))}
+-- // StarterGui.ScreenGui.Frame.TextButton.LocalScript \\ --
+UI["6"] = Instance.new("LocalScript", UI["4"])
+
 
 -- // StarterGui.ScreenGui.Frame.TextButton \\ --
 UI["7"] = Instance.new("TextButton", UI["2"])
-UI["7"]["TextWrapped"] = true
 UI["7"]["BorderSizePixel"] = 0
 UI["7"]["TextSize"] = 30
 UI["7"]["TextColor3"] = Color3.fromRGB(0, 0, 0)
@@ -51,8 +50,8 @@ UI["7"]["BackgroundColor3"] = Color3.fromRGB(255, 0, 5)
 UI["7"]["FontFace"] = Font.new([[rbxasset://fonts/families/FredokaOne.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal)
 UI["7"]["Size"] = UDim2.new(0, 195, 0, 40)
 UI["7"]["BorderColor3"] = Color3.fromRGB(0, 0, 0)
-UI["7"]["Text"] = [[Reset Character]]
-UI["7"]["Position"] = UDim2.new(0.50435, 0, 0.20582, 0)
+UI["7"]["Text"] = [[ Kick Yourself]]
+UI["7"]["Position"] = UDim2.new(0.05435, 0, 0.40514, 0)
 
 -- // StarterGui.ScreenGui.Frame.TextButton.UICorner \\ --
 UI["8"] = Instance.new("UICorner", UI["7"])
@@ -62,99 +61,99 @@ UI["8"]["CornerRadius"] = UDim.new(0, 40)
 UI["9"] = Instance.new("LocalScript", UI["7"])
 
 
--- // StarterGui.ScreenGui.Frame.TextButton \\ --
-UI["a"] = Instance.new("TextButton", UI["2"])
-UI["a"]["BorderSizePixel"] = 0
-UI["a"]["TextSize"] = 30
-UI["a"]["TextColor3"] = Color3.fromRGB(0, 0, 0)
-UI["a"]["BackgroundColor3"] = Color3.fromRGB(255, 0, 5)
-UI["a"]["FontFace"] = Font.new([[rbxasset://fonts/families/FredokaOne.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal)
-UI["a"]["Size"] = UDim2.new(0, 195, 0, 40)
-UI["a"]["BorderColor3"] = Color3.fromRGB(0, 0, 0)
-UI["a"]["Text"] = [[ Kick Yourself]]
-UI["a"]["Position"] = UDim2.new(0.05435, 0, 0.40514, 0)
-
--- // StarterGui.ScreenGui.Frame.TextButton.UICorner \\ --
-UI["b"] = Instance.new("UICorner", UI["a"])
-UI["b"]["CornerRadius"] = UDim.new(0, 40)
-
--- // StarterGui.ScreenGui.Frame.TextButton.LocalScript \\ --
-UI["c"] = Instance.new("LocalScript", UI["a"])
-
-
 -- // StarterGui.ScreenGui.Frame.LocalScript \\ --
-UI["d"] = Instance.new("LocalScript", UI["2"])
+UI["a"] = Instance.new("LocalScript", UI["2"])
 
 
 -- // StarterGui.ScreenGui.Frame.TextButton \\ --
-UI["e"] = Instance.new("TextButton", UI["2"])
-UI["e"]["BorderSizePixel"] = 0
-UI["e"]["TextSize"] = 30
-UI["e"]["TextColor3"] = Color3.fromRGB(0, 0, 0)
-UI["e"]["BackgroundColor3"] = Color3.fromRGB(255, 0, 5)
-UI["e"]["FontFace"] = Font.new([[rbxasset://fonts/families/FredokaOne.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal)
-UI["e"]["Size"] = UDim2.new(0, 200, 0, 40)
-UI["e"]["BorderColor3"] = Color3.fromRGB(0, 0, 0)
-UI["e"]["Text"] = [[Hammer (Item)]]
-UI["e"]["Position"] = UDim2.new(0.05435, 0, 0.20907, 0)
+UI["b"] = Instance.new("TextButton", UI["2"])
+UI["b"]["BorderSizePixel"] = 0
+UI["b"]["TextSize"] = 30
+UI["b"]["TextColor3"] = Color3.fromRGB(0, 0, 0)
+UI["b"]["BackgroundColor3"] = Color3.fromRGB(255, 0, 5)
+UI["b"]["FontFace"] = Font.new([[rbxasset://fonts/families/FredokaOne.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+UI["b"]["Size"] = UDim2.new(0, 200, 0, 40)
+UI["b"]["BorderColor3"] = Color3.fromRGB(0, 0, 0)
+UI["b"]["Text"] = [[Hammer (Item)]]
+UI["b"]["Position"] = UDim2.new(0.05435, 0, 0.20907, 0)
 
 -- // StarterGui.ScreenGui.Frame.TextButton.UICorner \\ --
-UI["f"] = Instance.new("UICorner", UI["e"])
-UI["f"]["CornerRadius"] = UDim.new(0, 40)
+UI["c"] = Instance.new("UICorner", UI["b"])
+UI["c"]["CornerRadius"] = UDim.new(0, 40)
 
 -- // StarterGui.ScreenGui.Frame.TextButton.LocalScript \\ --
-UI["10"] = Instance.new("LocalScript", UI["e"])
+UI["d"] = Instance.new("LocalScript", UI["b"])
 
 
 -- // StarterGui.ScreenGui.Frame.TextButton.Hammer \\ --
-UI["11"] = Instance.new("Tool", UI["e"])
+UI["e"] = Instance.new("Tool", UI["b"])
 -- [ERROR] cannot convert Grip
 -- [ERROR] cannot convert WorldPivot
-UI["11"]["Name"] = [[Hammer]]
+UI["e"]["Name"] = [[Hammer]]
 
 -- // StarterGui.ScreenGui.Frame.TextButton.Hammer.Handle \\ --
-UI["12"] = Instance.new("Part", UI["11"])
-UI["12"]["BottomSurface"] = Enum.SurfaceType.Smooth
-UI["12"]["Color"] = Color3.fromRGB(249, 249, 249)
-UI["12"]["TopSurface"] = Enum.SurfaceType.Smooth
-UI["12"]["Size"] = Vector3.new(0.4, 2.2, 0.4)
+UI["f"] = Instance.new("Part", UI["e"])
+UI["f"]["BottomSurface"] = Enum.SurfaceType.Smooth
+UI["f"]["Color"] = Color3.fromRGB(249, 249, 249)
+UI["f"]["TopSurface"] = Enum.SurfaceType.Smooth
+UI["f"]["Size"] = Vector3.new(0.4, 2.2, 0.4)
 -- [ERROR] cannot convert BrickColor
-UI["12"]["Rotation"] = Vector3.new(-156.21001, -20.723, -160.48)
-UI["12"]["Name"] = [[Handle]]
+UI["f"]["Rotation"] = Vector3.new(-156.21001, -20.723, -160.48)
+UI["f"]["Name"] = [[Handle]]
 -- [ERROR] cannot convert CFrame
 
 -- // StarterGui.ScreenGui.Frame.TextButton.Hammer.Handle.Mesh \\ --
-UI["13"] = Instance.new("SpecialMesh", UI["12"])
-UI["13"]["MeshId"] = [[rbxasset://fonts/hammer.mesh]]
-UI["13"]["TextureId"] = [[rbxasset://textures/hammertex128.png]]
-UI["13"]["MeshType"] = Enum.MeshType.FileMesh
-UI["13"]["Scale"] = Vector3.new(0.4, 0.57895, 0.4)
+UI["10"] = Instance.new("SpecialMesh", UI["f"])
+UI["10"]["MeshId"] = [[rbxasset://fonts/hammer.mesh]]
+UI["10"]["TextureId"] = [[rbxasset://textures/hammertex128.png]]
+UI["10"]["MeshType"] = Enum.MeshType.FileMesh
+UI["10"]["Scale"] = Vector3.new(0.4, 0.57895, 0.4)
 
 -- // StarterGui.ScreenGui.Frame.TextButton \\ --
-UI["14"] = Instance.new("TextButton", UI["2"])
-UI["14"]["TextWrapped"] = true
-UI["14"]["BorderSizePixel"] = 0
-UI["14"]["TextSize"] = 30
-UI["14"]["TextColor3"] = Color3.fromRGB(0, 0, 0)
-UI["14"]["BackgroundColor3"] = Color3.fromRGB(255, 0, 5)
-UI["14"]["FontFace"] = Font.new([[rbxasset://fonts/families/FredokaOne.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal)
-UI["14"]["Size"] = UDim2.new(0, 195, 0, 39)
-UI["14"]["BorderColor3"] = Color3.fromRGB(0, 0, 0)
-UI["14"]["Text"] = [[Fly]]
-UI["14"]["Position"] = UDim2.new(0.50435, 0, 0.40514, 0)
+UI["11"] = Instance.new("TextButton", UI["2"])
+UI["11"]["TextWrapped"] = true
+UI["11"]["BorderSizePixel"] = 0
+UI["11"]["TextSize"] = 30
+UI["11"]["TextColor3"] = Color3.fromRGB(0, 0, 0)
+UI["11"]["BackgroundColor3"] = Color3.fromRGB(255, 0, 5)
+UI["11"]["FontFace"] = Font.new([[rbxasset://fonts/families/FredokaOne.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+UI["11"]["Size"] = UDim2.new(0, 195, 0, 39)
+UI["11"]["BorderColor3"] = Color3.fromRGB(0, 0, 0)
+UI["11"]["Text"] = [[Fly (updated)]]
+UI["11"]["Position"] = UDim2.new(0.50435, 0, 0.40514, 0)
 
 -- // StarterGui.ScreenGui.Frame.TextButton.UICorner \\ --
-UI["15"] = Instance.new("UICorner", UI["14"])
-UI["15"]["CornerRadius"] = UDim.new(0, 40)
+UI["12"] = Instance.new("UICorner", UI["11"])
+UI["12"]["CornerRadius"] = UDim.new(0, 40)
 
 -- // StarterGui.ScreenGui.Frame.TextButton.LocalScript \\ --
-UI["16"] = Instance.new("LocalScript", UI["14"])
+UI["13"] = Instance.new("LocalScript", UI["11"])
 
 
 -- // StarterGui.ScreenGui.Frame.UIGradient \\ --
-UI["17"] = Instance.new("UIGradient", UI["2"])
-UI["17"]["Transparency"] = NumberSequence.new{NumberSequenceKeypoint.new(0.000, 0.5),NumberSequenceKeypoint.new(1.000, 0.5)}
-UI["17"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(12, 69, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(12, 69, 255))}
+UI["14"] = Instance.new("UIGradient", UI["2"])
+UI["14"]["Transparency"] = NumberSequence.new{NumberSequenceKeypoint.new(0.000, 0.5),NumberSequenceKeypoint.new(1.000, 0.5)}
+UI["14"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(12, 69, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(12, 69, 255))}
+
+-- // StarterGui.ScreenGui.Frame.TextButton \\ --
+UI["15"] = Instance.new("TextButton", UI["2"])
+UI["15"]["BorderSizePixel"] = 0
+UI["15"]["TextSize"] = 30
+UI["15"]["TextColor3"] = Color3.fromRGB(0, 0, 0)
+UI["15"]["BackgroundColor3"] = Color3.fromRGB(255, 0, 5)
+UI["15"]["FontFace"] = Font.new([[rbxasset://fonts/families/FredokaOne.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+UI["15"]["Size"] = UDim2.new(0, 195, 0, 40)
+UI["15"]["BorderColor3"] = Color3.fromRGB(0, 0, 0)
+UI["15"]["Text"] = [[Speed]]
+UI["15"]["Position"] = UDim2.new(0.05435, 0, 0.61486, 0)
+
+-- // StarterGui.ScreenGui.Frame.TextButton.UICorner \\ --
+UI["16"] = Instance.new("UICorner", UI["15"])
+UI["16"]["CornerRadius"] = UDim.new(0, 40)
+
+-- // StarterGui.ScreenGui.Frame.TextButton.LocalScript \\ --
+UI["17"] = Instance.new("LocalScript", UI["15"])
+
 
 -- // StarterGui.ScreenGui.Frame.TextButton \\ --
 UI["18"] = Instance.new("TextButton", UI["2"])
@@ -165,8 +164,8 @@ UI["18"]["BackgroundColor3"] = Color3.fromRGB(255, 0, 5)
 UI["18"]["FontFace"] = Font.new([[rbxasset://fonts/families/FredokaOne.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal)
 UI["18"]["Size"] = UDim2.new(0, 195, 0, 40)
 UI["18"]["BorderColor3"] = Color3.fromRGB(0, 0, 0)
-UI["18"]["Text"] = [[Speed]]
-UI["18"]["Position"] = UDim2.new(0.05435, 0, 0.61486, 0)
+UI["18"]["Text"] = [[ESP]]
+UI["18"]["Position"] = UDim2.new(0.50435, 0, 0.61486, 0)
 
 -- // StarterGui.ScreenGui.Frame.TextButton.UICorner \\ --
 UI["19"] = Instance.new("UICorner", UI["18"])
@@ -183,10 +182,10 @@ UI["1b"]["TextSize"] = 30
 UI["1b"]["TextColor3"] = Color3.fromRGB(0, 0, 0)
 UI["1b"]["BackgroundColor3"] = Color3.fromRGB(255, 0, 5)
 UI["1b"]["FontFace"] = Font.new([[rbxasset://fonts/families/FredokaOne.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal)
-UI["1b"]["Size"] = UDim2.new(0, 195, 0, 40)
+UI["1b"]["Size"] = UDim2.new(0, 195, 0, 39)
 UI["1b"]["BorderColor3"] = Color3.fromRGB(0, 0, 0)
-UI["1b"]["Text"] = [[Heal]]
-UI["1b"]["Position"] = UDim2.new(0.50435, 0, 0.61486, 0)
+UI["1b"]["Text"] = [[High Jump]]
+UI["1b"]["Position"] = UDim2.new(0.05435, 0, 0.80405, 0)
 
 -- // StarterGui.ScreenGui.Frame.TextButton.UICorner \\ --
 UI["1c"] = Instance.new("UICorner", UI["1b"])
@@ -196,45 +195,46 @@ UI["1c"]["CornerRadius"] = UDim.new(0, 40)
 UI["1d"] = Instance.new("LocalScript", UI["1b"])
 
 
--- // StarterGui.ScreenGui.Frame.TextButton \\ --
-UI["1e"] = Instance.new("TextButton", UI["2"])
+-- // StarterGui.ScreenGui.Frame.TextLabel \\ --
+UI["1e"] = Instance.new("TextLabel", UI["2"])
+UI["1e"]["TextWrapped"] = true
 UI["1e"]["BorderSizePixel"] = 0
-UI["1e"]["TextSize"] = 30
-UI["1e"]["TextColor3"] = Color3.fromRGB(0, 0, 0)
-UI["1e"]["BackgroundColor3"] = Color3.fromRGB(255, 0, 5)
+UI["1e"]["TextScaled"] = true
+UI["1e"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255)
+UI["1e"]["TextSize"] = 6
 UI["1e"]["FontFace"] = Font.new([[rbxasset://fonts/families/FredokaOne.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal)
-UI["1e"]["Size"] = UDim2.new(0, 195, 0, 39)
+UI["1e"]["TextColor3"] = Color3.fromRGB(0, 0, 0)
+UI["1e"]["Size"] = UDim2.new(0, 460, 0, 43)
 UI["1e"]["BorderColor3"] = Color3.fromRGB(0, 0, 0)
-UI["1e"]["Text"] = [[High Jump]]
-UI["1e"]["Position"] = UDim2.new(0.05435, 0, 0.80405, 0)
+UI["1e"]["Text"] = [[Sebi's UI v1.1.6ESP]]
 
--- // StarterGui.ScreenGui.Frame.TextButton.UICorner \\ --
+-- // StarterGui.ScreenGui.Frame.TextLabel.UICorner \\ --
 UI["1f"] = Instance.new("UICorner", UI["1e"])
 UI["1f"]["CornerRadius"] = UDim.new(0, 40)
 
--- // StarterGui.ScreenGui.Frame.TextButton.LocalScript \\ --
-UI["20"] = Instance.new("LocalScript", UI["1e"])
+-- // StarterGui.ScreenGui.Frame.TextLabel.UIGradient \\ --
+UI["20"] = Instance.new("UIGradient", UI["1e"])
+UI["20"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(82, 82, 82)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(82, 82, 82))}
 
-
 -- // StarterGui.ScreenGui.Frame.TextButton.LocalScript \\ --
-local function SCRIPT_9()
-local script = UI["9"]
+local function SCRIPT_6()
+local script = UI["6"]
 	script.Parent.MouseButton1Click:Connect(function()
 		game.Players.LocalPlayer.Character.Humanoid.Health = 0
 	end)
 end
-task.spawn(SCRIPT_9)
+task.spawn(SCRIPT_6)
 -- // StarterGui.ScreenGui.Frame.TextButton.LocalScript \\ --
-local function SCRIPT_c()
-local script = UI["c"]
+local function SCRIPT_9()
+local script = UI["9"]
 	script.Parent.MouseButton1Click:Connect(function()
 		game.Players.LocalPlayer:Kick("You pressed the Kick button")
 	end)
 end
-task.spawn(SCRIPT_c)
+task.spawn(SCRIPT_9)
 -- // StarterGui.ScreenGui.Frame.LocalScript \\ --
-local function SCRIPT_d()
-local script = UI["d"]
+local function SCRIPT_a()
+local script = UI["a"]
 	--// Services
 	local Players = game:GetService('Players')
 	local UIS = game:GetService("UserInputService")
@@ -289,10 +289,10 @@ local script = UI["d"]
 		end
 	end)
 end
-task.spawn(SCRIPT_d)
+task.spawn(SCRIPT_a)
 -- // StarterGui.ScreenGui.Frame.TextButton.LocalScript \\ --
-local function SCRIPT_10()
-local script = UI["10"]
+local function SCRIPT_d()
+local script = UI["d"]
 	local p = game.Players.LocalPlayer
 	
 	script.Parent.MouseButton1Click:connect(function()
@@ -300,50 +300,84 @@ local script = UI["10"]
 		tool.Parent = p.Backpack
 	end)
 end
-task.spawn(SCRIPT_10)
+task.spawn(SCRIPT_d)
 -- // StarterGui.ScreenGui.Frame.TextButton.LocalScript \\ --
-local function SCRIPT_16()
-local script = UI["16"]
-	local isFlying = false
-	local camera = workspace.CurrentCamera
-	local char = game.Players.LocalPlayer.Character
-	local hrp = char:WaitForChild("HumanoidRootPart")
+local function SCRIPT_13()
+local script = UI["13"]
+	-- LocalScript inside TextButton
 	
-	local bodyPos = Instance.new("BodyPosition")
-	bodyPos.MaxForce = Vector3.new()
-	bodyPos.D = 10
-	bodyPos.P = 100
-	bodyPos.Parent = hrp
+	local player = game.Players.LocalPlayer
+	local character = player.Character or player.CharacterAdded:Wait()
+	local humanoid = character:WaitForChild("Humanoid")
+	local rootPart = character:WaitForChild("HumanoidRootPart")
+	
+	local flying = false
+	local speed = 50
+	
+	local button = script.Parent
+	
+	-- Create body velocity and body gyro instances
+	local bodyVelocity = Instance.new("BodyVelocity")
+	bodyVelocity.MaxForce = Vector3.new(4000, 4000, 4000)
 	
 	local bodyGyro = Instance.new("BodyGyro")
-	bodyGyro.MaxTorque = Vector3.new()
-	bodyGyro.D = 10
-	bodyGyro.Parent = hrp
+	bodyGyro.MaxTorque = Vector3.new(4000, 4000, 4000)
+	bodyGyro.P = 3000
 	
-	script.Parent.MouseButton1Click:Connect(function()
-		isFlying = not isFlying
-	end)
+	button.MouseButton1Click:Connect(function()
+		flying = not flying
 	
-	script.Parent.MouseButton2Click:Connect(function()
-		isFlying = false
+		if flying then
+			bodyVelocity.Parent = rootPart
+			bodyGyro.Parent = rootPart
+			humanoid.PlatformStand = true
+		else
+			bodyVelocity.Parent = nil
+			bodyGyro.Parent = nil
+			humanoid.PlatformStand = false
+			humanoid:ChangeState(Enum.HumanoidStateType.GettingUp) -- reset the humanoid state
+		end
 	end)
 	
 	game:GetService("RunService").RenderStepped:Connect(function()
-		if isFlying then
-			bodyPos.MaxForce = Vector3.new(math.huge, math.huge,math)
-			bodyGyro.MaxTorque = Vector3.new(math.huge, math.huge, math.huge)
-			bodyPos.Position = hrp.Position +((hrp.Position - camera.CFrame.Position).Unit * 10)
-			bodyGyro.CFrame = CFrame.new(camera.CFrame.Position, hrp.Position)
-		else
-			bodyPos.MaxForce = Vector3.new()
-			bodyGyro.MaxTorque = Vector3.new()
+		if flying then
+			local camera = workspace.CurrentCamera
+			local moveDirection = Vector3.new()
+	
+			if game:GetService("UserInputService"):IsKeyDown(Enum.KeyCode.W) then
+				moveDirection = moveDirection + camera.CFrame.LookVector
+			end
+			if game:GetService("UserInputService"):IsKeyDown(Enum.KeyCode.S) then
+				moveDirection = moveDirection - camera.CFrame.LookVector
+			end
+			if game:GetService("UserInputService"):IsKeyDown(Enum.KeyCode.A) then
+				moveDirection = moveDirection - camera.CFrame.RightVector
+			end
+			if game:GetService("UserInputService"):IsKeyDown(Enum.KeyCode.D) then
+				moveDirection = moveDirection + camera.CFrame.RightVector
+			end
+			if game:GetService("UserInputService"):IsKeyDown(Enum.KeyCode.Space) then
+				moveDirection = moveDirection + camera.CFrame.UpVector
+			end
+			if game:GetService("UserInputService"):IsKeyDown(Enum.KeyCode.LeftShift) then
+				moveDirection = moveDirection - camera.CFrame.UpVector
+			end
+	
+			if moveDirection.Magnitude > 0 then
+				bodyVelocity.Velocity = moveDirection.Unit * speed
+			else
+				bodyVelocity.Velocity = Vector3.new(0, 0, 0)
+			end
+	
+			bodyGyro.CFrame = camera.CFrame
 		end
 	end)
+	
 end
-task.spawn(SCRIPT_16)
+task.spawn(SCRIPT_13)
 -- // StarterGui.ScreenGui.Frame.TextButton.LocalScript \\ --
-local function SCRIPT_1a()
-local script = UI["1a"]
+local function SCRIPT_17()
+local script = UI["17"]
 	local Player = script.Parent.Parent.Parent.Parent.Parent
 	
 	script.Parent.MouseButton1Click:Connect(function()
@@ -353,6 +387,78 @@ local script = UI["1a"]
 		Character.Humanoid.WalkSpeed = Character.Humanoid.WalkSpeed + 50
 	
 	end)
+end
+task.spawn(SCRIPT_17)
+-- // StarterGui.ScreenGui.Frame.TextButton.LocalScript \\ --
+local function SCRIPT_1a()
+local script = UI["1a"]
+	-- LocalScript inside the ESP TextButton
+	
+	local espButton = script.Parent
+	local espEnabled = false
+	
+	local function createESP(player)
+		local character = player.Character or player.CharacterAdded:Wait()
+		local head = character:WaitForChild("Head")
+	
+		local billboardGui = Instance.new("BillboardGui")
+		billboardGui.Name = "ESPLabel"
+		billboardGui.Adornee = head
+		billboardGui.Size = UDim2.new(1, 0, 1, 0)
+		billboardGui.StudsOffset = Vector3.new(0, 2, 0)
+		billboardGui.AlwaysOnTop = true
+	
+		local textLabel = Instance.new("TextLabel")
+		textLabel.Size = UDim2.new(1, 0, 1, 0)
+		textLabel.BackgroundTransparency = 1
+		textLabel.Text = player.Name
+		textLabel.TextColor3 = Color3.new(1, 0, 0) -- Red color
+		textLabel.TextScaled = true
+		textLabel.Font = Enum.Font.SourceSansBold
+	
+		textLabel.Parent = billboardGui
+		billboardGui.Parent = head
+	end
+	
+	local function removeESP(player)
+		local character = player.Character
+		if character and character:FindFirstChild("Head") then
+			local head = character.Head
+			local espLabel = head:FindFirstChild("ESPLabel")
+			if espLabel then
+				espLabel:Destroy()
+			end
+		end
+	end
+	
+	local function toggleESP()
+		espEnabled = not espEnabled
+	
+		for _, player in pairs(game.Players:GetPlayers()) do
+			if player ~= game.Players.LocalPlayer then
+				if espEnabled then
+					createESP(player)
+				else
+					removeESP(player)
+				end
+			end
+		end
+	end
+	
+	espButton.MouseButton1Click:Connect(toggleESP)
+	
+	game.Players.PlayerAdded:Connect(function(player)
+		player.CharacterAdded:Connect(function(character)
+			if espEnabled then
+				createESP(player)
+			end
+		end)
+	end)
+	
+	game.Players.PlayerRemoving:Connect(function(player)
+		removeESP(player)
+	end)
+	
 end
 task.spawn(SCRIPT_1a)
 -- // StarterGui.ScreenGui.Frame.TextButton.LocalScript \\ --
@@ -364,24 +470,10 @@ local script = UI["1d"]
 	
 		local Character  = game.workspace:FindFirstChild(Player.Name)
 	
-		Character.Humanoid.Health = Character.Humanoid.Health + 100
-	
-	end)
-end
-task.spawn(SCRIPT_1d)
--- // StarterGui.ScreenGui.Frame.TextButton.LocalScript \\ --
-local function SCRIPT_20()
-local script = UI["20"]
-	local Player = script.Parent.Parent.Parent.Parent.Parent
-	
-	script.Parent.MouseButton1Click:Connect(function()
-	
-		local Character  = game.workspace:FindFirstChild(Player.Name)
-	
 		Character.Humanoid.JumpHeight = Character.Humanoid.JumpHeight + 10
 	
 	end)
 end
-task.spawn(SCRIPT_20)
+task.spawn(SCRIPT_1d)
 
 return UI["1"], require;
