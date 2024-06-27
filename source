@@ -1,6 +1,6 @@
 -- // GUI TO LUA \\ --
 
--- // INSTANCES: 32 | SCRIPTS: 8 | MODULES: 0 \\ --
+-- // INSTANCES: 35 | SCRIPTS: 9 | MODULES: 0 \\ --
 
 local UI = {}
 
@@ -145,7 +145,7 @@ UI["15"]["FontFace"] = Font.new([[rbxasset://fonts/families/FredokaOne.json]], E
 UI["15"]["Size"] = UDim2.new(0, 195, 0, 40)
 UI["15"]["BorderColor3"] = Color3.fromRGB(0, 0, 0)
 UI["15"]["Text"] = [[Speed]]
-UI["15"]["Position"] = UDim2.new(0.05435, 0, 0.61486, 0)
+UI["15"]["Position"] = UDim2.new(0.05435, 0, 0.59122, 0)
 
 -- // StarterGui.ScreenGui.Frame.TextButton.UICorner \\ --
 UI["16"] = Instance.new("UICorner", UI["15"])
@@ -165,7 +165,7 @@ UI["18"]["FontFace"] = Font.new([[rbxasset://fonts/families/FredokaOne.json]], E
 UI["18"]["Size"] = UDim2.new(0, 195, 0, 40)
 UI["18"]["BorderColor3"] = Color3.fromRGB(0, 0, 0)
 UI["18"]["Text"] = [[ESP]]
-UI["18"]["Position"] = UDim2.new(0.50435, 0, 0.61486, 0)
+UI["18"]["Position"] = UDim2.new(0.50435, 0, 0.59122, 0)
 
 -- // StarterGui.ScreenGui.Frame.TextButton.UICorner \\ --
 UI["19"] = Instance.new("UICorner", UI["18"])
@@ -185,7 +185,7 @@ UI["1b"]["FontFace"] = Font.new([[rbxasset://fonts/families/FredokaOne.json]], E
 UI["1b"]["Size"] = UDim2.new(0, 195, 0, 39)
 UI["1b"]["BorderColor3"] = Color3.fromRGB(0, 0, 0)
 UI["1b"]["Text"] = [[High Jump]]
-UI["1b"]["Position"] = UDim2.new(0.05435, 0, 0.80405, 0)
+UI["1b"]["Position"] = UDim2.new(0.05435, 0, 0.78716, 0)
 
 -- // StarterGui.ScreenGui.Frame.TextButton.UICorner \\ --
 UI["1c"] = Instance.new("UICorner", UI["1b"])
@@ -206,7 +206,7 @@ UI["1e"]["FontFace"] = Font.new([[rbxasset://fonts/families/FredokaOne.json]], E
 UI["1e"]["TextColor3"] = Color3.fromRGB(0, 0, 0)
 UI["1e"]["Size"] = UDim2.new(0, 460, 0, 43)
 UI["1e"]["BorderColor3"] = Color3.fromRGB(0, 0, 0)
-UI["1e"]["Text"] = [[Sebi's UI v1.1.6ESP]]
+UI["1e"]["Text"] = [[1.2.0Noclip]]
 
 -- // StarterGui.ScreenGui.Frame.TextLabel.UICorner \\ --
 UI["1f"] = Instance.new("UICorner", UI["1e"])
@@ -215,6 +215,26 @@ UI["1f"]["CornerRadius"] = UDim.new(0, 40)
 -- // StarterGui.ScreenGui.Frame.TextLabel.UIGradient \\ --
 UI["20"] = Instance.new("UIGradient", UI["1e"])
 UI["20"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(82, 82, 82)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(82, 82, 82))}
+
+-- // StarterGui.ScreenGui.Frame.TextButton \\ --
+UI["21"] = Instance.new("TextButton", UI["2"])
+UI["21"]["BorderSizePixel"] = 0
+UI["21"]["TextSize"] = 30
+UI["21"]["TextColor3"] = Color3.fromRGB(0, 0, 0)
+UI["21"]["BackgroundColor3"] = Color3.fromRGB(255, 0, 5)
+UI["21"]["FontFace"] = Font.new([[rbxasset://fonts/families/FredokaOne.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+UI["21"]["Size"] = UDim2.new(0, 195, 0, 39)
+UI["21"]["BorderColor3"] = Color3.fromRGB(0, 0, 0)
+UI["21"]["Text"] = [[Noclip]]
+UI["21"]["Position"] = UDim2.new(0.50435, 0, 0.78716, 0)
+
+-- // StarterGui.ScreenGui.Frame.TextButton.UICorner \\ --
+UI["22"] = Instance.new("UICorner", UI["21"])
+UI["22"]["CornerRadius"] = UDim.new(0, 40)
+
+-- // StarterGui.ScreenGui.Frame.TextButton.LocalScript \\ --
+UI["23"] = Instance.new("LocalScript", UI["21"])
+
 
 -- // StarterGui.ScreenGui.Frame.TextButton.LocalScript \\ --
 local function SCRIPT_6()
@@ -304,7 +324,7 @@ task.spawn(SCRIPT_d)
 -- // StarterGui.ScreenGui.Frame.TextButton.LocalScript \\ --
 local function SCRIPT_13()
 local script = UI["13"]
-	-- LocalScript inside TextButton
+	-- LocalScript inside the Fly TextButton
 	
 	local player = game.Players.LocalPlayer
 	local character = player.Character or player.CharacterAdded:Wait()
@@ -324,8 +344,13 @@ local script = UI["13"]
 	bodyGyro.MaxTorque = Vector3.new(4000, 4000, 4000)
 	bodyGyro.P = 3000
 	
-	button.MouseButton1Click:Connect(function()
+	local userInputService = game:GetService("UserInputService")
+	local runService = game:GetService("RunService")
+	
+	-- Function to toggle flying
+	local function toggleFly()
 		flying = not flying
+		print("Flying state toggled: ", flying)
 	
 		if flying then
 			bodyVelocity.Parent = rootPart
@@ -337,41 +362,76 @@ local script = UI["13"]
 			humanoid.PlatformStand = false
 			humanoid:ChangeState(Enum.HumanoidStateType.GettingUp) -- reset the humanoid state
 		end
-	end)
+	end
 	
-	game:GetService("RunService").RenderStepped:Connect(function()
-		if flying then
-			local camera = workspace.CurrentCamera
-			local moveDirection = Vector3.new()
+	button.MouseButton1Click:Connect(toggleFly)
 	
-			if game:GetService("UserInputService"):IsKeyDown(Enum.KeyCode.W) then
+	-- Function to handle desktop movement
+	local function handleDesktopMovement()
+		if not flying then return end
+		local camera = workspace.CurrentCamera
+		local moveDirection = Vector3.new()
+	
+		if userInputService:IsKeyDown(Enum.KeyCode.W) then
+			moveDirection = moveDirection + camera.CFrame.LookVector
+		end
+		if userInputService:IsKeyDown(Enum.KeyCode.S) then
+			moveDirection = moveDirection - camera.CFrame.LookVector
+		end
+		if userInputService:IsKeyDown(Enum.KeyCode.A) then
+			moveDirection = moveDirection - camera.CFrame.RightVector
+		end
+		if userInputService:IsKeyDown(Enum.KeyCode.D) then
+			moveDirection = moveDirection + camera.CFrame.RightVector
+		end
+		if userInputService:IsKeyDown(Enum.KeyCode.Space) then
+			moveDirection = moveDirection + camera.CFrame.UpVector
+		end
+		if userInputService:IsKeyDown(Enum.KeyCode.LeftShift) then
+			moveDirection = moveDirection - camera.CFrame.UpVector
+		end
+	
+		if moveDirection.Magnitude > 0 then
+			bodyVelocity.Velocity = moveDirection.Unit * speed
+		else
+			bodyVelocity.Velocity = Vector3.new(0, 0, 0)
+		end
+	
+		bodyGyro.CFrame = camera.CFrame
+	end
+	
+	-- Function to handle mobile movement
+	local function handleMobileMovement()
+		if not flying then return end
+		local camera = workspace.CurrentCamera
+		local moveDirection = Vector3.new()
+	
+		for _, touch in ipairs(userInputService:GetTouches()) do
+			if touch.UserInputState == Enum.UserInputState.Begin or touch.UserInputState == Enum.UserInputState.Change then
 				moveDirection = moveDirection + camera.CFrame.LookVector
 			end
-			if game:GetService("UserInputService"):IsKeyDown(Enum.KeyCode.S) then
-				moveDirection = moveDirection - camera.CFrame.LookVector
-			end
-			if game:GetService("UserInputService"):IsKeyDown(Enum.KeyCode.A) then
-				moveDirection = moveDirection - camera.CFrame.RightVector
-			end
-			if game:GetService("UserInputService"):IsKeyDown(Enum.KeyCode.D) then
-				moveDirection = moveDirection + camera.CFrame.RightVector
-			end
-			if game:GetService("UserInputService"):IsKeyDown(Enum.KeyCode.Space) then
-				moveDirection = moveDirection + camera.CFrame.UpVector
-			end
-			if game:GetService("UserInputService"):IsKeyDown(Enum.KeyCode.LeftShift) then
-				moveDirection = moveDirection - camera.CFrame.UpVector
-			end
-	
-			if moveDirection.Magnitude > 0 then
-				bodyVelocity.Velocity = moveDirection.Unit * speed
-			else
-				bodyVelocity.Velocity = Vector3.new(0, 0, 0)
-			end
-	
-			bodyGyro.CFrame = camera.CFrame
 		end
-	end)
+	
+		if moveDirection.Magnitude > 0 then
+			bodyVelocity.Velocity = moveDirection.Unit * speed
+		else
+			bodyVelocity.Velocity = Vector3.new(0, 0, 0)
+		end
+	
+		bodyGyro.CFrame = camera.CFrame
+	end
+	
+	-- Function to handle movement
+	local function handleMovement()
+		if userInputService.TouchEnabled then
+			handleMobileMovement()
+		else
+			handleDesktopMovement()
+		end
+	end
+	
+	-- Connect movement handling to RenderStepped for smooth updates
+	runService.RenderStepped:Connect(handleMovement)
 	
 end
 task.spawn(SCRIPT_13)
@@ -475,5 +535,38 @@ local script = UI["1d"]
 	end)
 end
 task.spawn(SCRIPT_1d)
+-- // StarterGui.ScreenGui.Frame.TextButton.LocalScript \\ --
+local function SCRIPT_23()
+local script = UI["23"]
+	-- LocalScript inside the Noclip TextButton
+	
+	local player = game.Players.LocalPlayer
+	local character = player.Character or player.CharacterAdded:Wait()
+	
+	local noclip = false
+	
+	local button = script.Parent
+	
+	local function setNoclip(state)
+		noclip = state
+		for _, part in ipairs(character:GetDescendants()) do
+			if part:IsA("BasePart") then
+				part.CanCollide = not state
+			end
+		end
+		print("Noclip state set to: ", noclip)
+	end
+	
+	local function toggleNoclip()
+		setNoclip(not noclip)
+	end
+	
+	button.MouseButton1Click:Connect(toggleNoclip)
+	
+	-- Initialize noclip state
+	setNoclip(false)  -- Ensure noclip is initially off
+	
+end
+task.spawn(SCRIPT_23)
 
 return UI["1"], require;
